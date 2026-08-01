@@ -71,6 +71,7 @@
 
   /* ---------- layout ---------- */
   section { max-width: var(--maxw); margin: 0 auto; padding: 96px 24px 0; }
+  section[id], header[id] { scroll-margin-top: 72px; }
   .section-head { text-align: center; margin-bottom: 52px; }
   .eyebrow {
     display: inline-block; font-size: .78rem; letter-spacing: 2px; text-transform: uppercase;
@@ -81,9 +82,13 @@
   .divider { width: 64px; height: 4px; border-radius: 4px; margin: 18px auto 0; background: linear-gradient(90deg, var(--accent-1), var(--accent-2)); }
 
   /* ---------- hero ---------- */
-  .hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; padding-top: 120px; }
+  .hero {
+    max-width: var(--maxw); margin: 0 auto;
+    min-height: 100vh; display: flex; flex-direction: column; justify-content: center;
+    padding: 120px 24px 0;
+  }
   .hero-tag {
-    display: inline-flex; align-items: center; gap: 8px;
+    display: inline-flex; align-items: center; gap: 8px; flex-wrap: wrap; line-height: 1.5;
     border: 1px solid rgba(56,217,255,.3); background: rgba(56,217,255,.08);
     color: var(--accent-2); font-size: .82rem; font-weight: 600;
     padding: 6px 14px; border-radius: 999px; width: fit-content; margin-bottom: 22px;
@@ -204,7 +209,7 @@
   .contact-card { text-align: center; padding: 28px 18px; }
   .contact-card .ico { font-size: 1.6rem; margin-bottom: 10px; }
   .contact-card h4 { font-size: .95rem; margin-bottom: 4px; }
-  .contact-card a { color: var(--muted); font-size: .9rem; text-decoration: none; word-break: break-all; }
+  .contact-card a { color: var(--muted); font-size: .9rem; text-decoration: none; overflow-wrap: anywhere; }
   .contact-card a:hover { color: var(--accent-2); }
 
   footer { margin-top: 96px; padding: 34px 24px; text-align: center; color: var(--muted); font-size: .86rem; border-top: 1px solid rgba(255,255,255,.06); }
@@ -388,7 +393,6 @@
       <div class="t-item">
         <h3>Front-End Development Intern</h3>
         <div class="org">Nothing Technology</div>
-        <div class="date"></div>
         <ul>
           <li>Built responsive, dynamic web solutions, honing front-end development skills in a real-world product environment.</li>
           <li>Contributed to web application development projects for startups and academic ventures.</li>
@@ -546,16 +550,17 @@
         <div><h4>Responsive Web Design</h4><div class="cert-meta">Free Code Camp</div></div>
       </div>
     </div>
-    <div class="card reveal">
+    <div class="card reveal" style="grid-column:1/-1">
       <div class="skill-group-title">Academic</div>
-      <div class="cert-item">
-        <div class="cert-logo">🎖️</div>
-        <div><h4>NPTEL Program</h4><div class="cert-meta">NPTEL</div></div>
-      </div>
-      <div style="height:14px"></div>
-      <div class="cert-item">
-        <div class="cert-logo">🏅</div>
-        <div><h4>ICECCT Research Paper — AgriVoice</h4><div class="cert-meta">Conference on Electrical, Computer &amp; Communication Techniques · Jul 2024</div></div>
+      <div style="display:flex; flex-wrap:wrap; gap:22px; row-gap:16px">
+        <div class="cert-item" style="flex:1 1 260px; min-width:260px">
+          <div class="cert-logo">🎖️</div>
+          <div><h4>NPTEL Program</h4><div class="cert-meta">NPTEL</div></div>
+        </div>
+        <div class="cert-item" style="flex:1 1 260px; min-width:260px">
+          <div class="cert-logo">🏅</div>
+          <div><h4>ICECCT Research Paper — AgriVoice</h4><div class="cert-meta">Conference on Electrical, Computer &amp; Communication Techniques · Jul 2024</div></div>
+        </div>
       </div>
     </div>
   </div>
